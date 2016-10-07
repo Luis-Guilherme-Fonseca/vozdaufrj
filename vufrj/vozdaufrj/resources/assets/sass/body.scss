@@ -1,0 +1,64 @@
+body {
+  padding-top: 8.5%;
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
+}
+
+p{
+  line-height: 22px;
+}
+
+.contColor {
+  background-color: white;
+  position: relative;
+  width: 100%; }
+
+.anuncios{
+  background-color: #d62728;
+  height: 100%;
+}
+
+.curso{
+  width: 30%;
+  margin: 1%;
+  background-color: green;
+  border: solid;
+  border-bottom-width: thick;
+}
+
+.centralizaTexto {
+  width:100%;
+  text-align: center;
+  padding-top:80%;
+  -webkit-transform: translateY(-50%); /* child now centers itself relative to the midline based on own contents */
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(Dx=0,Dy=0)';
+  filter: progid:DXImageTransform.Microsoft.Matrix(Dx=0,Dy=0);
+  transform: translateY(-50%);
+}
+.titulo_perfil{
+  color:#1f648b;
+  font-size: 20px;
+}
+.centro{
+  padding-left: 25%;
+}
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
+}
+div.retangulo {
+  line-height:0;
+  width:200px;
+  height:160px;
+  border: 25px solid #00f;
+}

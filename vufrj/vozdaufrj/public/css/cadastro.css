@@ -1,0 +1,16 @@
+.escondidinho{
+    display: none;
+}
+
+.noticias{
+    border-radius: 25px;
+    border: 2px solid #e9f5ff;
+}
+.noticias h1{
+    text-align: center;
+    background-color: #e8ecf4;
+}
+
+.link{
+    color: #2e2e2e;
+}
