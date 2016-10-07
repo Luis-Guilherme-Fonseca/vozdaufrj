@@ -50,11 +50,11 @@ class UserController extends Controller
     {
 
         $rules = array(
-            'nome' => 'required',
+            'name' => 'required',
             'DRE' => 'required|min:9|max:9|unique:users',
             'predio' => 'required',
             'email' => 'required|email|unique:users',
-            'senha' => 'required'
+            'password' => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
 
@@ -62,15 +62,14 @@ class UserController extends Controller
 
             return Redirect::to('/')
                 ->withErrors($validator)
-                ->withInput(Input::except('senha'));
+                ->withInput(Input::except('password'));
         }else{
-
             $usuario = new User;
-            $usuario->nome = Input::get('nome');
+            $usuario->nome = Input::get('name');
             $usuario->dre = Input::get('DRE');
             $usuario->predio = Input::get('predio');
             $usuario->email = Input::get('email');
-            $usuario->password = bcrypt(Input::get('senha'));
+            $usuario->password = bcrypt(Input::get('password'));
             if($usuario->predio === 'CCMN'){
                 $usuario->id_curso = Input::get('CCMN');
             }elseif ($usuario->predio === 'CCS'){
@@ -88,7 +87,7 @@ class UserController extends Controller
             }
             $usuario->save();
             Session::flash('parabens', 'voce esta cadastrado');
-            return back()->with(['parabens' => 'voce esta cadastrado' ]);
+            return Redirect::to('/login');
 
         }
     }

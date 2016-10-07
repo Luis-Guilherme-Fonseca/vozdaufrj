@@ -12,7 +12,7 @@
 */
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', function () {return view('principal');})->name('principal');
+Route::get('/', function () {return view('home');})->name('principal');
 Route::get('/contato', function () {return view('contato');})->name('contato');
 Route::get('/CCMN', function () {return view('CCMN');})->name('CCMN');
 Route::get('/BCMT', function () {return view('BCMT');})->name('BCMT');

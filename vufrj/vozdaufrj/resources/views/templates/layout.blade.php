@@ -163,50 +163,50 @@
         </div>
     </div>
 
-    {{--<div id="modalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--}}
-        {{--<div class="modal-dialog">--}}
-            {{--<div class="modal-content">--}}
-                {{--<div class="modal-header">--}}
-                    {{--<h4 class="modal-title" id="myModalLabel">Criação de novas Notícias</h4>--}}
-                {{--</div>--}}
-                {{--<form action="" method="">--}}
-                    {{--<div class="modal-body edit-content container-fluid">--}}
-                        {{--{{csrf_field()}}--}}
-                        {{--<div class="form-group">--}}
-                            {{--<label for="noticia">Notícia: </label>--}}
-                            {{--<textarea name="editar" id="editar" rows="10" cols="80">--}}
-                                {{--<div class="form-group">--}}
-                    {{--<label for="titulo">Titulo</label>--}}
-                    {{--<input type="text" name="titulo" id="titulo" class="form-control" value="{{old('titulo', $noticia->titulo)}}" placeholder="titulo aqui...">--}}
-                {{--</div>--}}
-                {{--<div class="form-group">--}}
-                    {{--<?php $field = 'imagem' ?>--}}
-                    {{--<label for="{{$field}}">{{ucfirst($field)}}</label>--}}
-                    {{--<input type="file" id="{{$field}}" name="{{$field}}">--}}
-                {{--</div>--}}
-                {{--<label for="conteudo">Conteúdo</label>--}}
+    <div id="modalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Criação de novas Notícias</h4>
+                </div>
+                <form action="" method="">
+                    <div class="modal-body edit-content container-fluid">
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            <label for="noticia">Notícia: </label>
+                            <textarea name="editar" id="editar" rows="10" cols="80">
+                                <div class="form-group">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" name="titulo" id="titulo" class="form-control" value="{{old('titulo', $noticia->titulo)}}" placeholder="titulo aqui...">
+                </div>
+                <div class="form-group">
+                    <?php $field = 'imagem' ?>
+                    <label for="{{$field}}">{{ucfirst($field)}}</label>
+                    <input type="file" id="{{$field}}" name="{{$field}}">
+                </div>
+                <label for="conteudo">Conteúdo</label>
 
-                {{--<div class="conteudoOriginalTextContainer hidden">{!! old('conteudo', $noticia->conteudo) !!}</div>--}}
-                {{--<textarea id="conteudo" name="conteudo"></textarea>--}}
-                        {{--</div>--}}
+                <div class="conteudoOriginalTextContainer hidden">{!! old('conteudo', $noticia->conteudo) !!}</div>
+                <textarea id="conteudo" name="conteudo"></textarea>
+                        </div>
 
 
-                            {{--</textarea>--}}
-                            {{--<script>--}}
-                                {{--// Replace the <textarea id="editor1"> with a CKEditor--}}
-                                {{--// instance, using default configuration.--}}
-                                {{--CKEDITOR.replace( 'editar' );--}}
-                            {{--</script>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="modal-footer">--}}
-                        {{--<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>--}}
-                        {{--<button type="submit" class="btn btn-primary text-right">Salvar</button>--}}
-                    {{--</div>--}}
-                {{--</form>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+                            </textarea>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace( 'editar' );
+                            </script>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary text-right">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <header>
             <div class="cabecalho container">
@@ -218,14 +218,8 @@
                         <p><a class="link" href="{{ url('/login') }}">Login</a></p>
                         <a class="link" href="{{ url('/register') }}">Register</a>
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="{{ url('/logout') }}"
+                                    <a class="link" href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Logout
@@ -235,8 +229,6 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
-                            </ul>
-                        </li>
                     @endif
 
                 </div>
